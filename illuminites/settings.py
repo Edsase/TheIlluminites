@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ""
+SECRET_KEY = '=rxe9(2y=jogx2nn_t3wq5_upz1ji1uw)!q6@_)rc$8=kf2syj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -165,11 +165,17 @@ INSTALLED_APPS = (
 	'aldryn_boilerplates',	
 	'aldryn_background_image',
 	'aldryn_bootstrap3',
+	'django_forms_bootstrap',
+	'bootstrap3',
 	# project specific apps here
 	'my_custom_page_extension',
 	'my_custom_social_addon',
+	# picture plugin
+	'djangocms_picture',
 	# plugin for social media shares
 	'social_share',
+	'djangocms_comments',
+	
 )
 
 LANGUAGES = (
@@ -228,3 +234,12 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+# configuration settings for django-cms picture
+DJANGOCMS_PICTURE_NESTING = True # be able to place additional plugins inside the picture plugin
+DJANGOCMS_PICTURE_RATIO = 1.618 #  set the width/height ratio of images to the golden ratio ;)
+
+# configuration settings for django-cms easy_thumbnails
+THUMBNAIL_HIGH_RESOLUTION = True
+
+
